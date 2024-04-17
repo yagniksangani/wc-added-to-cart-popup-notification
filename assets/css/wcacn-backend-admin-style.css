@@ -1,0 +1,20 @@
+/**
+ * All of the CSS for your admin-specific functionality should be
+ * included in this file.
+ */
+
+.wcac_popup_settings_form {
+    background: white;
+    padding: 20px 20px;
+    margin-top: 20px;
+    border: 1px solid #c3c4c7;
+    border-radius: 20px;
+    max-width: 850px;
+}
+
+.wcacn_instruction_notes {
+    background-color: #ffedcc;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #c3c4c7;
+}

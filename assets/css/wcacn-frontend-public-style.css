@@ -1,0 +1,457 @@
+/**
+ * All of the CSS for your public-facing functionality should be
+ * included in this file.
+ */
+
+@font-face {
+    font-family: 'added-to-cart-popup-woocommerce';
+    src: url('fonts/added-to-cart-popup-woocommerce.eot?7r0p13');
+    src: url('fonts/added-to-cart-popup-woocommerce.eot?7r0p13#iefix') format('embedded-opentype'),
+        url('fonts/added-to-cart-popup-woocommerce.ttf?7r0p13') format('truetype'),
+        url('fonts/added-to-cart-popup-woocommerce.woff?7r0p13') format('woff'),
+        url('fonts/added-to-cart-popup-woocommerce.svg?7r0p13#added-to-cart-popup-woocommerce') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="wcacn-cp-icon-"],
+[class*=" wcacn-cp-icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'added-to-cart-popup-woocommerce' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.wcacn-cp-icon-spinner:before {
+    content: "\e97b";
+}
+
+.wcacn-cp-icon-cross:before {
+    content: "\ea0d";
+}
+
+.wcacn-cp-icon-check:before {
+    content: "\ea10";
+}
+
+/** -- **/
+.wcacn-cp-opac {
+    z-index: 99998;
+    background-color: black;
+    opacity: 0.6;
+    position: fixed;
+    display: none;
+}
+
+.wcacn-cp-opac,
+.wcacn-cp-modal,
+.wcacn-cp-cont-opac {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.wcacn-cp-modal {
+    position: fixed;
+    text-align: center;
+    z-index: 99998;
+    overflow: auto;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.7);
+}
+
+.wcacn-cp-active {
+    transition: visibility 0.4s ease-out, opacity 0.4s ease-out, transform 0.4s ease-out;
+    visibility: visible;
+    opacity: 1;
+    transform: scale(1);
+}
+
+.wcacn-cp-cont-opac {
+    z-index: 1;
+    background-color: white;
+    opacity: 0.5;
+    position: absolute;
+}
+
+.wcacn-cp-modal:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -0.25em;
+}
+
+.wcacn-cp-container.top {
+    display: inline-block;
+    max-width: 350px;
+    border: #a0a0a0 solid 1px;
+    background: #fff;
+    position: absolute;
+    vertical-align: middle;
+    width: 90%;
+    text-align: left;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .4);
+    border-radius: 5px;
+    padding: 15px;
+    top: 50px;
+    right: 25px;
+}
+
+.wcacn-cp-container.bottom {
+    display: inline-block;
+    max-width: 350px;
+    border: #a0a0a0 solid 1px;
+    background: #fff;
+    position: absolute;
+    vertical-align: middle;
+    width: 90%;
+    text-align: left;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .4);
+    border-radius: 5px;
+    padding: 15px;
+    bottom: 50px;
+    right: 25px;
+}
+
+span.wcacn-cp-close {
+    font-size: 29px;
+    position: absolute;
+    right: -13px;
+    top: -11px;
+    background-color: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.wcacn-cp-success,
+.wcacn-cp-error {
+    padding: 10px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    display: block;
+    text-align: left;
+}
+
+.wcacn-cp-error {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+    margin-top: 10px;
+}
+
+.wcacn-cp-success {
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+}
+
+.wcacn-cp-atcn {
+    overflow: auto;
+    padding: 10px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    display: block;
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+.wcacn-cp-atcn .wcacn-cp-icon-check {
+    margin-right: 5px;
+}
+
+.wcacn-cp-btns {
+    margin: 0 auto;
+    clear: both;
+    text-align: center;
+}
+
+.wcacn_layout2_content.wcacn-cp-ptitle {
+    padding: 25px 25px;
+    color: #ffffff;
+}
+
+.wcacn_layout2_content.wcacn-cp-ptitle a {
+    color: #ffffff;
+}
+
+a.wcacn-btn {
+    width: 100%;
+    text-transform: uppercase;
+    text-align: center;
+    cursor: pointer;
+    padding: 8px 0;
+    display: inline-block;
+    background: #ebdee0;
+    color: black;
+}
+
+@keyframes wcacn-cp-spin {
+    100% {
+        transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+.wcacn-cp-icon-spinner {
+    animation: wcacn-cp-spin 575ms infinite linear;
+    display: inline-block;
+}
+
+td.wcacn-cp-ptitle a {
+    font-weight: 600;
+    font-size: 18px;
+}
+
+td.wcacn-cp-pimg {
+    width: 20%;
+}
+
+.wcacn-cp-pdetails {
+    width: 100%;
+    display: block;
+    overflow: auto;
+}
+
+td.wcacn-cp-pprice {
+    font-size: 20px;
+    margin: 15px 0;
+    width: 15%;
+}
+
+td.wcacn-cp-pqty {
+    min-width: 90px;
+}
+
+.wcacn-cp-pdetails td.wcacn-cp-remove {
+    width: 5%;
+    font-size: 20px;
+}
+
+.wcacn-cp-pdetails td {
+    vertical-align: middle;
+    text-align: center;
+}
+
+.wcacn-cp-pdetails td.wcacn-cp-ptitle {
+    text-align: left;
+}
+
+.wcacn-cp-ptotal {
+    display: table;
+    float: right;
+    margin-right: 25px;
+    font-size: 18px;
+    padding: 10px 0;
+    border-top: 1px solid #e5e5e5;
+}
+
+.wcacn-ptotal {
+    font-size: 23px;
+}
+
+td.wcacn-cp-remove .wcacn-cp-remove-pd {
+    font-size: 20px;
+    color: #ea0a0a;
+    cursor: pointer;
+}
+
+td.wcacn-cp-ptitle {
+    width: 45%;
+    padding-left: 5px;
+}
+
+.wcacn-cp-preloader {
+    position: fixed;
+    top: 47%;
+    left: 47%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    animation: wcacn-cp-spin 575ms infinite linear;
+    font-size: 45px;
+}
+
+@keyframes wcacn-cp-spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@-ms-keyframes wcacn-cp-spin {
+    from {
+        -ms-transform: rotate(0deg);
+    }
+
+    to {
+        -ms-transform: rotate(360deg);
+    }
+}
+
+@-moz-keyframes wcacn-cp-spin {
+    from {
+        -moz-transform: rotate(0deg);
+    }
+
+    to {
+        -moz-transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes wcacn-cp-spin {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+.wcacn-cp-outer {
+    display: none;
+}
+
+.wcacn-cp-variations {
+    font-size: 13px;
+}
+
+.wcacn-cp-variations .variation {
+    overflow: auto;
+    margin-top: 5px;
+}
+
+.wcacn-cp-variations .variation dt {
+    margin: 0 5px 0 0;
+    float: left;
+}
+
+.wcacn-cp-variations .variation dd {
+    margin: 0 10px 0 0;
+    float: left;
+}
+
+/* When screen size is less than 500px */
+@media only screen and (max-width: 500px) {
+    a.wcacn-btn {
+        width: 100%;
+    }
+
+    span.wcacn-ptotal,
+    .wcacn-cp-ptotal {
+        font-size: 15px;
+
+    }
+
+    td.wcacn-cp-pimg {
+        display: none;
+    }
+
+    td.wcacn-cp-ptitle a,
+    td.wcacn-cp-pprice {
+        font-size: 14px;
+    }
+}
+
+
+span.wcacn-minus {
+    border-right-width: 1px;
+    border-right-style: solid;
+}
+
+span.wcacn-plus {
+    border-left-width: 1px;
+    border-left-style: solid;
+}
+
+span.wcacn-plus,
+span.wcacn-minus {
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    float: left;
+    width: 21px;
+}
+
+
+
+input[type=number].wcacn-cp-qty {
+    border: 0 !important;
+    text-align: center;
+    display: inline-block;
+    max-width: 30px;
+    float: left;
+    height: 100%;
+    line-height: 100%;
+    padding: 0;
+}
+
+input.wcacn-cp-qty::-webkit-outer-spin-button,
+input.wcacn-cp-qty::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0;
+    /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+.wcacn-cp-qtybox {
+    border-width: 1px;
+    border-style: solid;
+    position: relative;
+    display: inline-block;
+    font-weight: 700;
+    height: 37px;
+    line-height: 35px;
+}
+
+.wcacn-cp-added,
+.wcacn-cp-adding {
+    margin-left: 5px;
+}
+
+.wcacn-cp-notice-box {
+    left: 0;
+    right: 0;
+    bottom: 50px;
+    position: fixed;
+    z-index: 100000;
+}
+
+.wcacn-cp-notice-box>div {
+    display: table;
+    margin: 0 auto;
+    background-color: #333;
+    padding: 10px 20px;
+    color: white;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.wcacn-cp-notice ul.woocommerce-error a.button {
+    display: none;
+}
+
+.wcacn-cp-notice ul.woocommerce-error {
+    margin: 0;
+}
+
+.wcacn-cp-variations .variation:last-of-type {
+    display: none;
+}
+
+.wcacn-cp-variations .variation:first-of-type {
+    display: block;
+}
