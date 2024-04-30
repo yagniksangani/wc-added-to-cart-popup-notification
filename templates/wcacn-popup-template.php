@@ -1,6 +1,11 @@
 <?php
+/**
+ * Popup template.
+ *
+ * @package WC_AC_POPUP_NOTIFICATION
+ */
 
-// Exit if accessed directly
+// Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
 	return;
 }

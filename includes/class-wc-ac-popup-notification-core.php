@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 
-if ( ! class_exists( 'Wc_Ac_Popup_Notification_Init' ) ) :
+if ( ! class_exists( 'Wc_Ac_Popup_Notification_Core' ) ) :
 
 	/**
 	 * Adds Wc_Ac_Popup_Notification_Core widget.
