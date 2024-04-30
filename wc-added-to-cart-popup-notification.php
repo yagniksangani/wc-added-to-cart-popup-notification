@@ -4,7 +4,7 @@
  * Description:       Display a popup notification when a product is added to the WooCommerce cart.
  * Version:           1.0.0
  * Requires at least: 4.4
- * Requires PHP:      5.6.20
+ * Requires PHP:      7.4
  * Tested up to:      6.5.2
  * Author:            Yagnik Sangani
  * Author URI:        https://profiles.wordpress.org/yagniksangani/
